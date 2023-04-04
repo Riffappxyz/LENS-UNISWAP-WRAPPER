@@ -1,14 +1,14 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
-import "./ILensHub.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "./interfaces/ILensHub.sol";
 
-contract LensMaticWrapper is Pausable {
+contract LensMaticWrapper is Pausable, Ownable {
     address public lensHubAddress;
 
-    constructor(address _lensHubAddress) {
+    constructor(address _lensHubAddress) Ownable() Pausable() {
         lensHubAddress = _lensHubAddress;
     }
 
@@ -17,7 +17,7 @@ contract LensMaticWrapper is Pausable {
     }
 
     function collectWithSig(
-        ILensHub.DataTypes.CollectWithSigData calldata vars
+        DataTypes.CollectWithSigData calldata vars
     ) external whenNotPaused {
         ILensHub(lensHubAddress).collectWithSig(vars);
     }

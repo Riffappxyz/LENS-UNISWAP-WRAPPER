@@ -1,0 +1,1110 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_lensHubAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "collector",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "profileId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "pubId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint8",
+                  "name": "v",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "r",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "s",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "deadline",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct DataTypes.EIP712Signature",
+              "name": "sig",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct DataTypes.CollectWithSigData",
+          "name": "vars",
+          "type": "tuple"
+        }
+      ],
+      "name": "collectWithSig",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lensHubAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_lensHubAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setLensHubAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x608060405234801561001057600080fd5b5060405161061e38038061061e83398101604081905261002f916100c0565b6000805460ff1916905561004233610067565b600180546001600160a01b0319166001600160a01b03929092169190911790556100f0565b600080546001600160a01b03838116610100818102610100600160a81b0319851617855560405193049190911692909183917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a35050565b6000602082840312156100d257600080fd5b81516001600160a01b03811681146100e957600080fd5b9392505050565b61051f806100ff6000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c8063715018a61161005b578063715018a6146100dd5780638da5cb5b146100e5578063b48951e4146100fb578063f2fde38b1461010e57600080fd5b8063195d5a76146100825780635c975abb146100975780635dfadbdb146100b2575b600080fd5b610095610090366004610377565b610121565b005b60005460ff1660405190151581526020015b60405180910390f35b6001546100c5906001600160a01b031681565b6040516001600160a01b0390911681526020016100a9565b61009561014b565b60005461010090046001600160a01b03166100c5565b610095610109366004610399565b61015f565b61009561011c366004610377565b6101de565b61012961025c565b600180546001600160a01b0319166001600160a01b0392909216919091179055565b61015361025c565b61015d60006102bc565b565b610167610315565b600154604051632d22547960e21b81526001600160a01b039091169063b48951e490610197908490600401610432565b6020604051808303816000875af11580156101b6573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101da91906104d0565b5050565b6101e661025c565b6001600160a01b0381166102505760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b60648201526084015b60405180910390fd5b610259816102bc565b50565b6000546001600160a01b0361010090910416331461015d5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610247565b600080546001600160a01b03838116610100818102610100600160a81b0319851617855560405193049190911692909183917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a35050565b60005460ff161561015d5760405162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b6044820152606401610247565b80356001600160a01b038116811461037257600080fd5b919050565b60006020828403121561038957600080fd5b6103928261035b565b9392505050565b6000602082840312156103ab57600080fd5b813567ffffffffffffffff8111156103c257600080fd5b8201610100818503121561039257600080fd5b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b803560ff811680821461041057600080fd5b8352506020818101359083015260408082013590830152606090810135910152565b602081526001600160a01b036104478361035b565b166020820152602082013560408201526040820135606082015260006060830135601e1984360301811261047a57600080fd5b830160208101903567ffffffffffffffff81111561049757600080fd5b8036038213156104a657600080fd5b61010060808501526104bd610120850182846103d5565b91505061039260a08401608086016103fe565b6000602082840312156104e257600080fd5b505191905056fea26469706673582212207527b0f94800df1504b7c9f630f315d55477a3d999e20e8eae032cd3b11cccc364736f6c634300080f0033",
+    "sourceMap": "203:497:23:-:0;;;292:107;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1006:5:19;996:15;;-1:-1:-1;;996:15:19;;;936:32:18;719:10:20;936:18:18;:32::i;:::-;360:14:23::2;:32:::0;;-1:-1:-1;;;;;;360:32:23::2;-1:-1:-1::0;;;;;360:32:23;;;::::2;::::0;;;::::2;::::0;;203:497;;2426:187:18;2499:16;2518:6;;-1:-1:-1;;;;;2534:17:18;;;2518:6;2534:17;;;-1:-1:-1;;;;;;2534:17:18;;;;;2566:40;;2518:6;;;;;;;2534:17;;2518:6;;2566:40;;;2489:124;2426:187;:::o;14:290:27:-;84:6;137:2;125:9;116:7;112:23;108:32;105:52;;;153:1;150;143:12;105:52;179:16;;-1:-1:-1;;;;;224:31:27;;214:42;;204:70;;270:1;267;260:12;204:70;293:5;14:290;-1:-1:-1;;;14:290:27:o;:::-;203:497:23;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c8063715018a61161005b578063715018a6146100dd5780638da5cb5b146100e5578063b48951e4146100fb578063f2fde38b1461010e57600080fd5b8063195d5a76146100825780635c975abb146100975780635dfadbdb146100b2575b600080fd5b610095610090366004610377565b610121565b005b60005460ff1660405190151581526020015b60405180910390f35b6001546100c5906001600160a01b031681565b6040516001600160a01b0390911681526020016100a9565b61009561014b565b60005461010090046001600160a01b03166100c5565b610095610109366004610399565b61015f565b61009561011c366004610377565b6101de565b61012961025c565b600180546001600160a01b0319166001600160a01b0392909216919091179055565b61015361025c565b61015d60006102bc565b565b610167610315565b600154604051632d22547960e21b81526001600160a01b039091169063b48951e490610197908490600401610432565b6020604051808303816000875af11580156101b6573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101da91906104d0565b5050565b6101e661025c565b6001600160a01b0381166102505760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b60648201526084015b60405180910390fd5b610259816102bc565b50565b6000546001600160a01b0361010090910416331461015d5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610247565b600080546001600160a01b03838116610100818102610100600160a81b0319851617855560405193049190911692909183917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a35050565b60005460ff161561015d5760405162461bcd60e51b815260206004820152601060248201526f14185d5cd8589b194e881c185d5cd95960821b6044820152606401610247565b80356001600160a01b038116811461037257600080fd5b919050565b60006020828403121561038957600080fd5b6103928261035b565b9392505050565b6000602082840312156103ab57600080fd5b813567ffffffffffffffff8111156103c257600080fd5b8201610100818503121561039257600080fd5b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b803560ff811680821461041057600080fd5b8352506020818101359083015260408082013590830152606090810135910152565b602081526001600160a01b036104478361035b565b166020820152602082013560408201526040820135606082015260006060830135601e1984360301811261047a57600080fd5b830160208101903567ffffffffffffffff81111561049757600080fd5b8036038213156104a657600080fd5b61010060808501526104bd610120850182846103d5565b91505061039260a08401608086016103fe565b6000602082840312156104e257600080fd5b505191905056fea26469706673582212207527b0f94800df1504b7c9f630f315d55477a3d999e20e8eae032cd3b11cccc364736f6c634300080f0033",
+    "sourceMap": "203:497:23:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;405:120;;;;;;:::i;:::-;;:::i;:::-;;1615:84:19;1662:4;1685:7;;;1615:84;;548:14:27;;541:22;523:41;;511:2;496:18;1615:84:19;;;;;;;;256:29:23;;;;;-1:-1:-1;;;;;256:29:23;;;;;;-1:-1:-1;;;;;739:32:27;;;721:51;;709:2;694:18;256:29:23;575:203:27;1824:101:18;;;:::i;1201:85::-;1247:7;1273:6;;;;-1:-1:-1;;;;;1273:6:18;1201:85;;531:167:23;;;;;;:::i;:::-;;:::i;2074:198:18:-;;;;;;:::i;:::-;;:::i;405:120:23:-;1094:13:18;:11;:13::i;:::-;486:14:23::1;:32:::0;;-1:-1:-1;;;;;;486:32:23::1;-1:-1:-1::0;;;;;486:32:23;;;::::1;::::0;;;::::1;::::0;;405:120::o;1824:101:18:-;1094:13;:11;:13::i;:::-;1888:30:::1;1915:1;1888:18;:30::i;:::-;1824:101::o:0;531:167:23:-;1239:19:19;:17;:19::i;:::-;655:14:23::1;::::0;646:45:::1;::::0;-1:-1:-1;;;646:45:23;;-1:-1:-1;;;;;655:14:23;;::::1;::::0;646:39:::1;::::0;:45:::1;::::0;686:4;;646:45:::1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;531:167:::0;:::o;2074:198:18:-;1094:13;:11;:13::i;:::-;-1:-1:-1;;;;;2162:22:18;::::1;2154:73;;;::::0;-1:-1:-1;;;2154:73:18;;3386:2:27;2154:73:18::1;::::0;::::1;3368:21:27::0;3425:2;3405:18;;;3398:30;3464:34;3444:18;;;3437:62;-1:-1:-1;;;3515:18:27;;;3508:36;3561:19;;2154:73:18::1;;;;;;;;;2237:28;2256:8;2237:18;:28::i;:::-;2074:198:::0;:::o;1359:130::-;1247:7;1273:6;-1:-1:-1;;;;;1273:6:18;;;;;719:10:20;1422:23:18;1414:68;;;;-1:-1:-1;;;1414:68:18;;3793:2:27;1414:68:18;;;3775:21:27;;;3812:18;;;3805:30;3871:34;3851:18;;;3844:62;3923:18;;1414:68:18;3591:356:27;2426:187:18;2499:16;2518:6;;-1:-1:-1;;;;;2534:17:18;;;2518:6;2534:17;;;-1:-1:-1;;;;;;2534:17:18;;;;;2566:40;;2518:6;;;;;;;2534:17;;2518:6;;2566:40;;;2489:124;2426:187;:::o;1767:106:19:-;1662:4;1685:7;;;1836:9;1828:38;;;;-1:-1:-1;;;1828:38:19;;4154:2:27;1828:38:19;;;4136:21:27;4193:2;4173:18;;;4166:30;-1:-1:-1;;;4212:18:27;;;4205:46;4268:18;;1828:38:19;3952:340:27;14:173;82:20;;-1:-1:-1;;;;;131:31:27;;121:42;;111:70;;177:1;174;167:12;111:70;14:173;;;:::o;192:186::-;251:6;304:2;292:9;283:7;279:23;275:32;272:52;;;320:1;317;310:12;272:52;343:29;362:9;343:29;:::i;:::-;333:39;192:186;-1:-1:-1;;;192:186:27:o;783:399::-;881:6;934:2;922:9;913:7;909:23;905:32;902:52;;;950:1;947;940:12;902:52;990:9;977:23;1023:18;1015:6;1012:30;1009:50;;;1055:1;1052;1045:12;1009:50;1078:22;;1134:3;1116:16;;;1112:26;1109:46;;;1151:1;1148;1141:12;1187:266;1275:6;1270:3;1263:19;1327:6;1320:5;1313:4;1308:3;1304:14;1291:43;-1:-1:-1;1379:1:27;1354:16;;;1372:4;1350:27;;;1343:38;;;;1435:2;1414:15;;;-1:-1:-1;;1410:29:27;1401:39;;;1397:50;;1187:266::o;1458:420::-;1564:5;1551:19;1602:4;1593:7;1589:18;1638:2;1629:7;1626:15;1616:43;;1655:1;1652;1645:12;1616:43;1668:15;;-1:-1:-1;1739:4:27;1728:16;;;1715:30;1699:14;;;1692:54;1802:4;1791:16;;;1778:30;1762:14;;;1755:54;1865:4;1854:16;;;1841:30;1825:14;;1818:54;1458:420::o;1883:1107::-;2088:2;2070:21;;-1:-1:-1;;;;;2131:26:27;2150:6;2131:26;:::i;:::-;2127:52;2122:2;2111:9;2107:18;2100:80;2241:2;2233:6;2229:15;2216:29;2211:2;2200:9;2196:18;2189:57;2307:2;2299:6;2295:15;2282:29;2277:2;2266:9;2262:18;2255:57;2051:4;2372:2;2364:6;2360:15;2347:29;2456:2;2452:7;2443:6;2427:14;2423:27;2419:41;2399:18;2395:66;2385:94;;2475:1;2472;2465:12;2385:94;2501:31;;2609:2;2598:14;;;2555:19;2635:18;2624:30;;2621:50;;;2667:1;2664;2657:12;2621:50;2716:6;2700:14;2696:27;2687:7;2683:41;2680:61;;;2737:1;2734;2727:12;2680:61;2778:6;2772:3;2761:9;2757:19;2750:35;2808:63;2866:3;2855:9;2851:19;2843:6;2834:7;2808:63;:::i;:::-;2794:77;;;2880:81;2956:3;2945:9;2941:19;2935:3;2927:6;2923:16;2880:81;:::i;2995:184::-;3065:6;3118:2;3106:9;3097:7;3093:23;3089:32;3086:52;;;3134:1;3131;3124:12;3086:52;-1:-1:-1;3157:16:27;;2995:184;-1:-1:-1;2995:184:27:o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "collectWithSig((address,uint256,uint256,bytes,(uint8,bytes32,bytes32,uint256)))": "b48951e4",
+    "lensHubAddress()": "5dfadbdb",
+    "owner()": "8da5cb5b",
+    "paused()": "5c975abb",
+    "renounceOwnership()": "715018a6",
+    "setLensHubAddress(address)": "195d5a76",
+    "transferOwnership(address)": "f2fde38b"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lensHubAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"profileId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"pubId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"components\":[{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"}],\"internalType\":\"struct DataTypes.EIP712Signature\",\"name\":\"sig\",\"type\":\"tuple\"}],\"internalType\":\"struct DataTypes.CollectWithSigData\",\"name\":\"vars\",\"type\":\"tuple\"}],\"name\":\"collectWithSig\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lensHubAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lensHubAddress\",\"type\":\"address\"}],\"name\":\"setLensHubAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"paused()\":{\"details\":\"Returns true if the contract is paused, and false otherwise.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/LensMaticWrapper.sol\":\"LensMaticWrapper\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/access/Ownable.sol\":{\"keccak256\":\"0x923b9774b81c1abfb992262ae7763b6e6de77b077a7180d53c6ebb7b1c8bd648\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://53445dc0431f9b45c06f567c6091da961d4087bec0010cca5bd62100fa624a38\",\"dweb:/ipfs/QmNvBYpBv183czrAqNXr76E8M3LF93ouAJFeAcHfb59Rcx\"]},\"lib/openzeppelin-contracts/contracts/security/Pausable.sol\":{\"keccak256\":\"0x0849d93b16c9940beb286a7864ed02724b248b93e0d80ef6355af5ef15c64773\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4ddabb16009cd17eaca3143feadf450ac13e72919ebe2ca50e00f61cb78bc004\",\"dweb:/ipfs/QmSPwPxX7d6TTWakN5jy5wsaGkS1y9TW8fuhGSraMkLk2B\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"src/LensMaticWrapper.sol\":{\"keccak256\":\"0x1c925a007dd31ff61b25406c277314b97c9b725b1c641eb19ded8605be4b64f3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cdb60613440f91264c6b9e9b8f95e2775d3271526461fd9f831eee9ee05c05c0\",\"dweb:/ipfs/QmdFqcdnDSnMY2pwza2qqpmFqz9mnnwFTd3yKVpqeG7Y33\"]},\"src/interfaces/ILensHub.sol\":{\"keccak256\":\"0xdad3a116f3f2851123b7e5461ceabffabcbd69fd0d188822fff7ebbaa5550008\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9245d9bf152a8303395d5f5072c46529008285650e09faeed95191f1a2e71289\",\"dweb:/ipfs/QmUrXgKSCVLS9LA75kqY6jrn5iRrpgACAJDAuuZFG8RN8m\"]},\"src/libraries/DataTypes.sol\":{\"keccak256\":\"0x916479a96bcdaecf26fb29c27a856233c1efb6774f5fef7591ecc93b6627b00e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://531a848f2dc39c1ee6f13c5f0d107d0b49f0c9f0663f4093ea819124cff0d6a3\",\"dweb:/ipfs/QmRy2xDbyfArcWgjMLmydQ1NnmtvgfaQ8MLwQKq3Tby6rK\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.15+commit.e14f2714"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_lensHubAddress",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "OwnershipTransferred",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Paused",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Unpaused",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct DataTypes.CollectWithSigData",
+              "name": "vars",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "collector",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "profileId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "pubId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "struct DataTypes.EIP712Signature",
+                  "name": "sig",
+                  "type": "tuple",
+                  "components": [
+                    {
+                      "internalType": "uint8",
+                      "name": "v",
+                      "type": "uint8"
+                    },
+                    {
+                      "internalType": "bytes32",
+                      "name": "r",
+                      "type": "bytes32"
+                    },
+                    {
+                      "internalType": "bytes32",
+                      "name": "s",
+                      "type": "bytes32"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "deadline",
+                      "type": "uint256"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "collectWithSig"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "lensHubAddress",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "owner",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "paused",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "renounceOwnership"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_lensHubAddress",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setLensHubAddress"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transferOwnership"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "owner()": {
+            "details": "Returns the address of the current owner."
+          },
+          "paused()": {
+            "details": "Returns true if the contract is paused, and false otherwise."
+          },
+          "renounceOwnership()": {
+            "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+          },
+          "transferOwnership(address)": {
+            "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        ":forge-std/=lib/forge-std/src/",
+        ":openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/LensMaticWrapper.sol": "LensMaticWrapper"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/openzeppelin-contracts/contracts/access/Ownable.sol": {
+        "keccak256": "0x923b9774b81c1abfb992262ae7763b6e6de77b077a7180d53c6ebb7b1c8bd648",
+        "urls": [
+          "bzz-raw://53445dc0431f9b45c06f567c6091da961d4087bec0010cca5bd62100fa624a38",
+          "dweb:/ipfs/QmNvBYpBv183czrAqNXr76E8M3LF93ouAJFeAcHfb59Rcx"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/security/Pausable.sol": {
+        "keccak256": "0x0849d93b16c9940beb286a7864ed02724b248b93e0d80ef6355af5ef15c64773",
+        "urls": [
+          "bzz-raw://4ddabb16009cd17eaca3143feadf450ac13e72919ebe2ca50e00f61cb78bc004",
+          "dweb:/ipfs/QmSPwPxX7d6TTWakN5jy5wsaGkS1y9TW8fuhGSraMkLk2B"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+        "keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+        "urls": [
+          "bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+          "dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+        ],
+        "license": "MIT"
+      },
+      "src/LensMaticWrapper.sol": {
+        "keccak256": "0x1c925a007dd31ff61b25406c277314b97c9b725b1c641eb19ded8605be4b64f3",
+        "urls": [
+          "bzz-raw://cdb60613440f91264c6b9e9b8f95e2775d3271526461fd9f831eee9ee05c05c0",
+          "dweb:/ipfs/QmdFqcdnDSnMY2pwza2qqpmFqz9mnnwFTd3yKVpqeG7Y33"
+        ],
+        "license": "MIT"
+      },
+      "src/interfaces/ILensHub.sol": {
+        "keccak256": "0xdad3a116f3f2851123b7e5461ceabffabcbd69fd0d188822fff7ebbaa5550008",
+        "urls": [
+          "bzz-raw://9245d9bf152a8303395d5f5072c46529008285650e09faeed95191f1a2e71289",
+          "dweb:/ipfs/QmUrXgKSCVLS9LA75kqY6jrn5iRrpgACAJDAuuZFG8RN8m"
+        ],
+        "license": "MIT"
+      },
+      "src/libraries/DataTypes.sol": {
+        "keccak256": "0x916479a96bcdaecf26fb29c27a856233c1efb6774f5fef7591ecc93b6627b00e",
+        "urls": [
+          "bzz-raw://531a848f2dc39c1ee6f13c5f0d107d0b49f0c9f0663f4093ea819124cff0d6a3",
+          "dweb:/ipfs/QmRy2xDbyfArcWgjMLmydQ1NnmtvgfaQ8MLwQKq3Tby6rK"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/LensMaticWrapper.sol",
+    "id": 28839,
+    "exportedSymbols": {
+      "Context": [
+        28743
+      ],
+      "DataTypes": [
+        29583
+      ],
+      "ILensHub": [
+        29337
+      ],
+      "LensMaticWrapper": [
+        28838
+      ],
+      "Ownable": [
+        28613
+      ],
+      "Pausable": [
+        28721
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:669:23",
+    "nodes": [
+      {
+        "id": 28786,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:23",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 28787,
+        "nodeType": "ImportDirective",
+        "src": "57:55:23",
+        "nodes": [],
+        "absolutePath": "lib/openzeppelin-contracts/contracts/security/Pausable.sol",
+        "file": "@openzeppelin/contracts/security/Pausable.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 28839,
+        "sourceUnit": 28722,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 28788,
+        "nodeType": "ImportDirective",
+        "src": "113:52:23",
+        "nodes": [],
+        "absolutePath": "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "file": "@openzeppelin/contracts/access/Ownable.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 28839,
+        "sourceUnit": 28614,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 28789,
+        "nodeType": "ImportDirective",
+        "src": "166:35:23",
+        "nodes": [],
+        "absolutePath": "src/interfaces/ILensHub.sol",
+        "file": "./interfaces/ILensHub.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 28839,
+        "sourceUnit": 29338,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 28838,
+        "nodeType": "ContractDefinition",
+        "src": "203:497:23",
+        "nodes": [
+          {
+            "id": 28795,
+            "nodeType": "VariableDeclaration",
+            "src": "256:29:23",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "5dfadbdb",
+            "mutability": "mutable",
+            "name": "lensHubAddress",
+            "nameLocation": "271:14:23",
+            "scope": 28838,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 28794,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "256:7:23",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 28809,
+            "nodeType": "FunctionDefinition",
+            "src": "292:107:23",
+            "nodes": [],
+            "body": {
+              "id": 28808,
+              "nodeType": "Block",
+              "src": "350:49:23",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 28806,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 28804,
+                      "name": "lensHubAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 28795,
+                      "src": "360:14:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 28805,
+                      "name": "_lensHubAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 28797,
+                      "src": "377:15:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "360:32:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 28807,
+                  "nodeType": "ExpressionStatement",
+                  "src": "360:32:23"
+                }
+              ]
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 28800,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 28799,
+                  "name": "Ownable",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 28613,
+                  "src": "329:7:23"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "329:9:23"
+              },
+              {
+                "arguments": [],
+                "id": 28802,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 28801,
+                  "name": "Pausable",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 28721,
+                  "src": "339:8:23"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "339:10:23"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 28798,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28797,
+                  "mutability": "mutable",
+                  "name": "_lensHubAddress",
+                  "nameLocation": "312:15:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28809,
+                  "src": "304:23:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28796,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "304:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "303:25:23"
+            },
+            "returnParameters": {
+              "id": 28803,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "350:0:23"
+            },
+            "scope": 28838,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 28821,
+            "nodeType": "FunctionDefinition",
+            "src": "405:120:23",
+            "nodes": [],
+            "body": {
+              "id": 28820,
+              "nodeType": "Block",
+              "src": "476:49:23",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 28818,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 28816,
+                      "name": "lensHubAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 28795,
+                      "src": "486:14:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 28817,
+                      "name": "_lensHubAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 28811,
+                      "src": "503:15:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "486:32:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 28819,
+                  "nodeType": "ExpressionStatement",
+                  "src": "486:32:23"
+                }
+              ]
+            },
+            "functionSelector": "195d5a76",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 28814,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 28813,
+                  "name": "onlyOwner",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 28532,
+                  "src": "466:9:23"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "466:9:23"
+              }
+            ],
+            "name": "setLensHubAddress",
+            "nameLocation": "414:17:23",
+            "parameters": {
+              "id": 28812,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28811,
+                  "mutability": "mutable",
+                  "name": "_lensHubAddress",
+                  "nameLocation": "440:15:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28821,
+                  "src": "432:23:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28810,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "432:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "431:25:23"
+            },
+            "returnParameters": {
+              "id": 28815,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "476:0:23"
+            },
+            "scope": 28838,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28837,
+            "nodeType": "FunctionDefinition",
+            "src": "531:167:23",
+            "nodes": [],
+            "body": {
+              "id": 28836,
+              "nodeType": "Block",
+              "src": "636:62:23",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 28833,
+                        "name": "vars",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 28824,
+                        "src": "686:4:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CollectWithSigData_$29562_calldata_ptr",
+                          "typeString": "struct DataTypes.CollectWithSigData calldata"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_CollectWithSigData_$29562_calldata_ptr",
+                          "typeString": "struct DataTypes.CollectWithSigData calldata"
+                        }
+                      ],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "id": 28830,
+                            "name": "lensHubAddress",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 28795,
+                            "src": "655:14:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 28829,
+                          "name": "ILensHub",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 29337,
+                          "src": "646:8:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_ILensHub_$29337_$",
+                            "typeString": "type(contract ILensHub)"
+                          }
+                        },
+                        "id": 28831,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "646:24:23",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ILensHub_$29337",
+                          "typeString": "contract ILensHub"
+                        }
+                      },
+                      "id": 28832,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "collectWithSig",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 29113,
+                      "src": "646:39:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_struct$_CollectWithSigData_$29562_memory_ptr_$returns$_t_uint256_$",
+                        "typeString": "function (struct DataTypes.CollectWithSigData memory) external returns (uint256)"
+                      }
+                    },
+                    "id": 28834,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "646:45:23",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 28835,
+                  "nodeType": "ExpressionStatement",
+                  "src": "646:45:23"
+                }
+              ]
+            },
+            "functionSelector": "b48951e4",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 28827,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 28826,
+                  "name": "whenNotPaused",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 28648,
+                  "src": "622:13:23"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "622:13:23"
+              }
+            ],
+            "name": "collectWithSig",
+            "nameLocation": "540:14:23",
+            "parameters": {
+              "id": 28825,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28824,
+                  "mutability": "mutable",
+                  "name": "vars",
+                  "nameLocation": "602:4:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28837,
+                  "src": "564:42:23",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_CollectWithSigData_$29562_calldata_ptr",
+                    "typeString": "struct DataTypes.CollectWithSigData"
+                  },
+                  "typeName": {
+                    "id": 28823,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 28822,
+                      "name": "DataTypes.CollectWithSigData",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 29562,
+                      "src": "564:28:23"
+                    },
+                    "referencedDeclaration": 29562,
+                    "src": "564:28:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CollectWithSigData_$29562_storage_ptr",
+                      "typeString": "struct DataTypes.CollectWithSigData"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "554:58:23"
+            },
+            "returnParameters": {
+              "id": 28828,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "636:0:23"
+            },
+            "scope": 28838,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 28790,
+              "name": "Pausable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 28721,
+              "src": "232:8:23"
+            },
+            "id": 28791,
+            "nodeType": "InheritanceSpecifier",
+            "src": "232:8:23"
+          },
+          {
+            "baseName": {
+              "id": 28792,
+              "name": "Ownable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 28613,
+              "src": "242:7:23"
+            },
+            "id": 28793,
+            "nodeType": "InheritanceSpecifier",
+            "src": "242:7:23"
+          }
+        ],
+        "canonicalName": "LensMaticWrapper",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          28838,
+          28613,
+          28721,
+          28743
+        ],
+        "name": "LensMaticWrapper",
+        "nameLocation": "212:16:23",
+        "scope": 28839,
+        "usedErrors": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 23
+}
