@@ -33,7 +33,7 @@ contract LensMaticWrapper is Pausable, Ownable {
 
     function collectWithSig(
         DataTypes.CollectWithSigData calldata vars
-    ) external whenNotPaused {
+    ) external payable whenNotPaused {
         // Wrap MATIC to WMATIC
         wrapMatic();
 
